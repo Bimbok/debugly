@@ -63,3 +63,5 @@ function SeverityBadge({ level }: { level: Issue["severity"] }) {
     </span>
   )
 }
+
+export default ReviewPanel

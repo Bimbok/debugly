@@ -1,7 +1,7 @@
 "use client"
 
 import { Canvas } from "@react-three/fiber"
-import { Environment, Float, Stars } from "@react-three/drei"
+import { Float, Stars } from "@react-three/drei"
 import { Suspense } from "react"
 
 export function ThreeBackground() {
@@ -16,7 +16,6 @@ export function ThreeBackground() {
             <meshStandardMaterial color={"#12b9c6"} metalness={0.2} roughness={0.4} wireframe />
           </mesh>
         </Float>
-        <Environment preset="city" />
       </Suspense>
       <ambientLight intensity={0.7} />
       <directionalLight position={[5, 5, 5]} intensity={1} />

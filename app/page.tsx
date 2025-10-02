@@ -2,12 +2,13 @@
 
 import { useCallback, useRef, useState } from "react"
 import { DiffEditor, Editor } from "@/components/code-editor"
-import { ThreeBackground } from "@/components/three-background"
-import { ReviewPanel } from "@/components/review-panel"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import ReviewPanel from "@/components/review-panel" // Import ReviewPanel component
+import ErrorBoundary from "@/components/error-boundary" // Import ErrorBoundary component
 
 type Issue = {
   title: string
@@ -30,6 +31,10 @@ return result
 }
 console.log(add(2,"3"))
 `
+
+const ThreeBackground = dynamic(() => import("@/components/three-background").then((m) => m.ThreeBackground), {
+  ssr: false,
+})
 
 export default function HomePage() {
   const [code, setCode] = useState(starterCode)
@@ -116,7 +121,9 @@ export default function HomePage() {
   return (
     <main className="relative min-h-screen overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <ThreeBackground />
+        <ErrorBoundary fallback={<div className="absolute inset-0 bg-background" aria-hidden />}>
+          <ThreeBackground />
+        </ErrorBoundary>
       </div>
 
       <header className="relative z-10">
@@ -136,7 +143,7 @@ export default function HomePage() {
       <section className="relative z-10">
         <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="text-center mb-8">
-            <p className="mb-2 text-xs tracking-widest text-primary">bimbok for Developers</p>
+            <p className="mb-2 text-xs tracking-widest text-primary">v0 for Developers</p>
             <h1 className="text-balance text-4xl sm:text-5xl font-semibold">
               Find bugs, optimize, and secure your code
             </h1>
