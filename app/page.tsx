@@ -143,7 +143,7 @@ export default function HomePage() {
       <section className="relative z-10">
         <div className="mx-auto max-w-6xl px-4 py-10">
           <div className="text-center mb-8">
-            <p className="mb-2 text-xs tracking-widest text-primary">v0 for Developers</p>
+            <p className="mb-2 text-xs tracking-widest text-primary">bimbok for Developers</p>
             <h1 className="text-balance text-4xl sm:text-5xl font-semibold">
               Find bugs, optimize, and secure your code
             </h1>
