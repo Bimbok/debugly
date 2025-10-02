@@ -218,14 +218,14 @@ export default function HomePage() {
                     >
                       {loading ? "Reviewing…" : "Review Code"}
                     </Button>
-                    <Button
+                    {/* <Button
                       variant="secondary"
                       className="w-full sm:w-auto shrink-0 whitespace-nowrap"
                       onClick={() => setShowDiff((v) => !v)}
                       disabled={!review}
                     >
                       {showDiff ? "Hide Diff" : "Show Diff"}
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
 
