@@ -5,9 +5,12 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Debugly',
-  description: 'Created with bimbok',
-  generator: 'bimbok',
+  title: 'Debugly - AI Code Review',
+  description: 'Find bugs, optimize, and secure your code with AI. Paste your code and get instant feedback powered by Gemini.',
+  generator: 'Next.js',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
