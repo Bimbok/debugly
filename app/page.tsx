@@ -44,7 +44,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false)
   const [apiKey, setApiKey] = useState("")
   const [review, setReview] = useState<ReviewResponse | null>(null)
-  const [showDiff, setShowDiff] = useState(true)
+  const [showDiff, setShowDiff] = useState(false)
   const [theme, setTheme] = useState<
     | "github-dark"
     | "github-light"
